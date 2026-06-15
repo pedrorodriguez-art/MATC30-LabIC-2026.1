@@ -57,14 +57,14 @@ def main():
   Lista = List()
 
   a = int(input("Digite o valor de a: "))
-  while a < 1:
+  while a > 1000 or a < 1:
     print("Valor inválido")
-    a = int(input("Digite outro valor (a>=1): "))
+    a = int(input("Digite outro valor (1000 >= a >=1): "))
   Lista.append(a)
   b = int(input("Digite o valor de b: "))
-  while b > 1000:
+  while b > 1000 or b < 1:
     print("Valor inválido")
-    b = int(input("Digite outro valor (b>1000): "))
+    b = int(input("Digite outro valor (1000 >= b >=1): "))
   Lista.append(b)
 
   print(f"Soma dos valores: {Lista.soma()}")

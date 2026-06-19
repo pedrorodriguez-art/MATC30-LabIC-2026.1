@@ -1,0 +1,15 @@
+x = int(input()) # entrada número 1
+
+while x < 1 or x > 1000:
+    print("Entrada inválida. x deve ser maior que 1 e menor que 1000")
+    x = int(input())
+
+y = int(input()) # entrada número 2
+
+while y < 1 or y > 1000:
+    print("Entrada inválida. y deve ser maior que 1 e menor que 1000")
+    y = int(input())
+    
+z = (x + y) # resultado da soma 
+
+print(z) # saída

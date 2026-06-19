@@ -1,0 +1,27 @@
+#Atividade Fase 2 - Lab. Programação
+
+def somar_elementos(ar):
+    soma = 0
+    for i in range(len(ar)):
+        soma = soma + ar[i]
+    return soma
+
+n = int(input())
+entrada = input()
+
+ar = []
+numero = ""
+
+for caractere in entrada:
+    if caractere == " ":
+        if numero != "":
+            ar.append(int(numero))
+            numero = ""
+    else:
+        numero = numero + caractere
+
+if numero != "":
+    ar.append(int(numero))
+
+resultado = somar_elementos(ar)
+print(resultado)

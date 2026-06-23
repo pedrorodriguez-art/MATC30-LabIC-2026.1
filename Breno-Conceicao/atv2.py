@@ -1,3 +1,5 @@
+#ATIVIDADE 2 - BRENO
+
 def somar_array(ar):
     total = 0
     for i in range(len(ar)):

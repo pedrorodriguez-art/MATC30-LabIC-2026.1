@@ -1,3 +1,5 @@
+#ATIVIDADE 4 - BRENO
+
 def espaco_extremidade(texto):
     inicio = 0
     fim = len(texto) - 1

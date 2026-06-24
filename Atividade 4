@@ -1,0 +1,59 @@
+q = int(input())
+
+for consulta in range(q):
+    n = int(input())
+
+    matriz = []
+
+    for i in range(n):
+        linha = input().split()
+
+        for j in range(n):
+            linha[j] = int(linha[j])
+
+        matriz.append(linha)
+
+    containers = []
+
+    for i in range(n):
+        soma = 0
+
+        for j in range(n):
+            soma += matriz[i][j]
+
+        containers.append(soma)
+
+    tipos = []
+
+    for j in range(n):
+        soma = 0
+
+        for i in range(n):
+            soma += matriz[i][j]
+
+        tipos.append(soma)
+
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if containers[j] > containers[j + 1]:
+                temp = containers[j]
+                containers[j] = containers[j + 1]
+                containers[j + 1] = temp
+
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if tipos[j] > tipos[j + 1]:
+                temp = tipos[j]
+                tipos[j] = tipos[j + 1]
+                tipos[j + 1] = temp
+
+    possivel = True
+
+    for i in range(n):
+        if containers[i] != tipos[i]:
+            possivel = False
+
+    if possivel:
+        print("Possible")
+    else:
+        print("Impossible")

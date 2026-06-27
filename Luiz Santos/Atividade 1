@@ -1,0 +1,3 @@
+a =  int(input("Digite o primero número: "))
+b =  int(input("Digite o segundo número: "))
+print(f"A soma dos números é: {a+b}")

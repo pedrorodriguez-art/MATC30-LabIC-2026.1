@@ -8,7 +8,7 @@ while a < 1:                                                      # Testa adequa
 
 b =  int(input("Digite o 2º número: "))                           # Recebe o valor de b
 
-while b > 1000:
+while b > 1000:                                                   # Testa adequação à restrição b >= 1000
   print("**ERRO: O 2º número precisa ser menor ou igual a 1000")
   b = int(input("Digite outro número: "))
 

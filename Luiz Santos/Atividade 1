@@ -1,3 +1,15 @@
-a =  int(input("Digite o primero número: "))
-b =  int(input("Digite o segundo número: "))
+#Atividade 1 - Luiz Santos
+
+a =  int(input("Digite o 1º número: "))                           # Recebe o valor de a
+
+while a < 1:                                                      # Testa adequação à restrição 1 <= a
+  print("**ERRO: O 1º número precisa ser maior ou igual a 1")
+  a = int(input("Digite outro número: "))
+
+b =  int(input("Digite o 2º número: "))                           # Recebe o valor de b
+
+while b > 1000:
+  print("**ERRO: O 2º número precisa ser menor ou igual a 1000")
+  b = int(input("Digite outro número: "))
+
 print(f"A soma dos números é: {a+b}")

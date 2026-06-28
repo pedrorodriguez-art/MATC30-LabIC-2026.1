@@ -1,0 +1,52 @@
+# Atividade 4 - Luiz Santos
+
+q = int(input())
+
+for _ in range(q):
+    n = int(input())
+
+    matriz = []
+    for i in range(n):
+        linha = input().split()
+        linha_numeros = []
+        for valor in linha:
+            linha_numeros.append(int(valor))
+        matriz.append(linha_numeros)
+
+    soma_linhas = [] # Soma de cada linha - Total de bolas em cada contêiner
+    for i in range(n):
+        total = 0
+        for j in range(n):
+            total = total + matriz[i][j]
+        soma_linhas.append(total)
+
+    soma_colunas = [] # Soma de cada coluna - Total de bolas de cada tipo
+    for j in range(n):
+        total = 0
+        for i in range(n):
+            total = total + matriz[i][j]
+        soma_colunas.append(total)
+
+    for i in range(n): # Ordena soma_linhas por bubble sort
+        for j in range(n - 1):
+            if soma_linhas[j] > soma_linhas[j + 1]:
+                temp = soma_linhas[j]
+                soma_linhas[j] = soma_linhas[j + 1]
+                soma_linhas[j + 1] = temp
+
+    for i in range(n): # Ordena soma_colunas por bubble sort
+        for j in range(n - 1):
+            if soma_colunas[j] > soma_colunas[j + 1]:
+                temp = soma_colunas[j]
+                soma_colunas[j] = soma_colunas[j + 1]
+                soma_colunas[j + 1] = temp
+
+    igual = True # Faz a comparação das duas listas ordenadas
+    for i in range(n):
+        if soma_linhas[i] != soma_colunas[i]:
+            igual = False
+
+    if igual == True:
+        print("Possible")
+    else:
+        print("Impossible")

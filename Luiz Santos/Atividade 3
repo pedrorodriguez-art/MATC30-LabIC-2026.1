@@ -1,0 +1,35 @@
+# Atividade 3 - Luiz Santos
+
+def prox_palavra(w):
+    letras = list(w)
+    n = len(letras)
+
+    i = n - 2 # Encontra o ponto de quebra "i"
+    while i >= 0 and letras[i] >= letras[i + 1]:
+        i -= 1
+
+    if i < 0:
+        return "no answer"
+
+    j = n - 1  # Acha a menor letra maior que letras[i], vindo da direita
+    while letras[j] <= letras[i]:
+        j -= 1
+
+    letras[i], letras[j] = letras[j], letras[i] # Troca
+
+    esquerda = i + 1 # Inverte o final
+    direita = n - 1
+    while esquerda < direita:
+        letras[esquerda], letras[direita] = letras[direita], letras[esquerda]
+        esquerda += 1
+        direita -= 1
+
+    resultado = "" # Monta a string final
+    for letra in letras:
+        resultado += letra
+    return resultado
+
+t = int(input())
+for _ in range(t):
+    w = input().strip()
+    print(prox_palavra(w))

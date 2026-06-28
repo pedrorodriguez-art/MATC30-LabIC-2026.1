@@ -1,0 +1,20 @@
+#Atividade 2 - Luiz Santos
+
+tamanho_lista =  int(input("Digite a quantidade de números: ")) # Armazena o tamanho da lista
+
+while tamanho_lista < 1 or tamanho_lista > 1000: # Restrição do valor para o tamanho da lista
+  print("**ERRO: O número precisa estar entre 1 e 1000")
+  tamanho_lista = int(input("Digite outro número: "))
+
+lista = list(map(int, input(f"Digite uma lista contendo {tamanho_lista} números: ").split())) # Cria a lista
+
+while len(lista) != tamanho_lista: # Se a quantidade de números for diferente da quantidade informada, surge um erro
+    print(f"**ERRO: Digite {tamanho_lista} números.")
+    lista = list(map(int, input(f"Digite os {tamanho_lista} números").split()))
+
+soma = 0 # Variável de soma
+
+for n in lista: # Soma os números armazenados na lista
+  soma += n
+
+print(f"A soma dos números da lista é: {soma}") # Printa o resultado da soma

@@ -25,7 +25,6 @@ def organizingContainers(container):
     for i in range(n):
         for j in range(0, n - i - 1):
             if ball_types_count[j] > ball_types_count[j + 1]:
-                # Troca manual
                 temp = ball_types_count[j]
                 ball_types_count[j] = ball_types_count[j + 1]
                 ball_types_count[j + 1] = temp
@@ -35,3 +34,23 @@ def organizingContainers(container):
             return "Impossible"
             
     return "Possible"
+
+
+def main():
+    caso_1 = [
+        [1, 1],
+        [1, 1]
+    ]
+    resultado_1 = organizingContainers(caso_1)
+    print(resultado_1)
+    
+    caso_2 = [
+        [0, 2],
+        [1, 1]
+    ]
+    resultado_2 = organizingContainers(caso_2)
+    print(resultado_2)
+
+
+if __name__ == "__main__":
+    main()

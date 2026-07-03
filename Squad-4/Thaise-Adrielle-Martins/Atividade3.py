@@ -24,8 +24,6 @@ def proxima_palavra(palavra):
         
     return "".join(letras)
 
-
-
 if __name__ == '__main__':
     
     testes = ["ab", "bb", "hefg", "dhck", "dkhc"]

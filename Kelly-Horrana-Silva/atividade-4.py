@@ -1,37 +1,37 @@
-def organizar_conteineres(container: list[list[int]]) -> str:
-    n = len(container)
+def organizar_conteineres(matriz):
+    quantidade = len(matriz)
 
-    soma_linhas = []
-    soma_colunas = [0] * n
+    capacidade_conteiner = []
+    quantidade_tipo_bola = [0] * quantidade
 
-    # soma de cada linha
-    for i in range(n):
-        soma_linhas.append(sum(container[i]))
+    # Soma das bolas em cada contêiner
+    for linha in matriz:
+        capacidade_conteiner.append(sum(linha))
 
-    # soma de cada coluna
-    for j in range(n):
-        for i in range(n):
-            soma_colunas[j] += container[i][j]
+    # Soma das bolas de cada tipo
+    for i in range(quantidade):
+        for j in range(quantidade):
+            quantidade_tipo_bola[j] += matriz[i][j]
 
-    # comparação final
-    if sorted(soma_linhas) == sorted(soma_colunas):
-        return "Possível"
+    if sorted(capacidade_conteiner) == sorted(quantidade_tipo_bola):
+        return "Possible"
 
-    return "Impossível"
+    return "Impossible"
 
 
 def main():
-    q = int(input().strip())
+    n = int(input("Quantidade de contêineres: "))
 
-    for _ in range(q):
-        n = int(input().strip())
-        container = []
+    matriz = []
 
-        for _ in range(n):
-            linha = list(map(int, input().split()))
-            container.append(linha)
+    print("Digite a matriz:")
 
-        print(organizar_conteineres(container))
+    for _ in range(n):
+        linha = list(map(int, input().split()))
+        matriz.append(linha)
+
+    resultado = organizar_conteineres(matriz)
+    print(resultado)
 
 
 if __name__ == "__main__":

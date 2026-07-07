@@ -5,3 +5,8 @@ def somaArray(list):
         total += i
     
     return total
+
+n = int(input())
+list = [int(x) for x in input().split()]
+
+print(somaArray(list))

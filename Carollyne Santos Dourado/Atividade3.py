@@ -5,7 +5,7 @@ def proxima_palavra(palavra):
     while i>=0 and letras[i]>=letras[i+1]:
         i-=1
     if i==-1:
-        return "no answer"
+        return "sem resposta"
     j=len(letras)-1
     while letras[j]<=letras[i]:
         j-=1

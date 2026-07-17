@@ -1,0 +1,78 @@
+def proxima_palavra(w):
+    letras = []
+
+    for caractere in w:
+        letras.append(caractere)
+
+    n = len(letras)
+
+    i = n - 2
+
+    while i >= 0 and letras[i] >= letras[i + 1]:
+        i -= 1
+
+    if i < 0:
+        return "no answer"
+
+    j = n - 1
+
+    while j > i and letras[j] <= letras[i]:
+        j -= 1
+
+    temp = letras[i]
+    letras[i] = letras[j]
+    letras[j] = temp
+
+    esquerda = i + 1
+    direita = n - 1
+
+    while esquerda < direita:
+        temp = letras[esquerda]
+        letras[esquerda] = letras[direita]
+        letras[direita] = temp
+
+        esquerda += 1
+        direita -= 1
+
+    resultado = ""
+
+    for k in range(n):
+        resultado += letras[k]
+
+    return resultado
+
+def palavra_valida(w):
+    tamanho = len(w)
+
+    if tamanho < 1 or tamanho > 100:
+        return False
+
+    for i in range(tamanho):
+        if w[i] < 'a' or w[i] > 'z':
+            return False
+
+    return True
+
+def main():
+    t = int(input("Quantitade de Palavras que serão inseridas: "))
+    if t < 1 or t > 100000:
+        print("Quantidade de casos inválida")
+        return
+
+    palavras = []
+
+    for i in range(t):
+        w = input(f"Palavra {i+1}: ").strip()
+
+        if palavra_valida(w) == False:
+            print("Palavra inválida")
+            return
+        
+        palavras.append(w)
+
+    for i in range(t):
+        resposta = proxima_palavra(palavras[i])
+        print(f"Resposta {i+1}: {resposta}")
+
+
+main()
